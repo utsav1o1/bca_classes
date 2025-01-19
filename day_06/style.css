@@ -1,0 +1,25 @@
+.container {
+    background-color: burlywood;
+    color: tomato;
+    position: relative;
+}
+
+
+.btn {
+    width: 100px;
+    height: 50px;
+    background-color: lightcoral;
+}
+
+.big{
+    font-size: 30px;
+    height: 200vh;
+    background-color: lightcyan;
+}
+
+
+#para {
+    background-color: rgb(245, 218, 86);
+    position: absolute;
+    top:100px ;
+}

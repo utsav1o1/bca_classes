@@ -1,0 +1,28 @@
+.bca {
+    text-align: center;
+    color: blue;
+    background: rgb(46, 114, 60);
+    background: linear-gradient(112deg, rgba(46, 114, 60, 1) 0%, rgba(9, 113, 121, 1) 35%, rgba(38, 0, 255, 1) 100%);
+}
+
+#task {
+    text-align: center;
+    color: red;
+}
+
+p {
+    text-align: center;
+    color: #0d10dfe0;
+    background-color: burlywood;
+    font-size: 4rem;
+    background-image: url('http://127.0.0.1:5500/images/test.jpg');
+    width: 50%;
+    height: 50%;
+
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+p:hover {
+    color: yellow;
+}

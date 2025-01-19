@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html>
     <head>
         <meta charset="utf-8">
@@ -7,10 +8,39 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="">
+        <style>
+            @keyframes buttonClick {
+                0% {
+                  background-color: white;
+                  transform: scale(1);
+                }
+                100% {
+                  background-color: yellow;
+                  transform: scale(1.2);
+                }
+              }
+              
+              button:active {
+                animation: buttonClick 0.5s ease forwards;
+              }
+              
+                button {
+                    background-color: red;
+                    color: white;
+                    border: none;
+                    padding: 10px 20px;
+                    font-size: 16px;
+                    cursor: pointer;
+                    border-radius: 5px;
+                }
+        </style>              
     </head>
     <body>
         
-        something added here
+        
+            <button>Click Me</button>
+       
+        
         <script src="" async defer></script>
     </body>
 </html>
