@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie Filter</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
@@ -54,9 +53,7 @@
             </button>
         </div>
 
-        <div id="movieContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-            <!-- Movie cards will be displayed here -->
-        </div>
+        <div id="movieContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6"></div>
     </div>
 
     <script>
@@ -64,15 +61,10 @@
         const API_URL = 'https://api.themoviedb.org/3/search/movie';
         const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/w500';
 
-        const searchInput = document.getElementById('searchInput');
-        const searchButton = document.getElementById('searchButton');
-        const movieContainer = document.getElementById('movieContainer');
-
-        searchButton.addEventListener('click', fetchMovies);
-
+        document.getElementById('searchButton').addEventListener('click', fetchMovies);
 
         async function fetchMovies() {
-            const query = searchInput.value;
+            const query = document.getElementById('searchInput').value;
             if (!query) {
                 alert('Please enter a movie name to search.');
                 return;
@@ -88,16 +80,18 @@
             if (response.ok) {
                 const data = await response.json();
                 displayMovies(data.results);
+        
             } else {
                 alert('Failed to fetch movies. Please try again.');
             }
         }
 
         function displayMovies(movies) {
-            movieContainer.innerHTML = '';
+            const container = document.getElementById('movieContainer');
+            container.innerHTML = '';
 
             if (movies.length === 0) {
-                movieContainer.innerHTML = '<p class="text-center text-gray-400">No movies found.</p>';
+                container.innerHTML = '<p class="text-center text-gray-400">No movies found.</p>';
                 return;
             }
 
@@ -117,12 +111,9 @@
                     </div>
                 `;
 
-                movieContainer.appendChild(movieCard);
+                container.appendChild(movieCard);
             });
         }
-
-
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>
